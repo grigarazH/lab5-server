@@ -11,14 +11,5 @@ class SeasonImage extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['season', 'image_url'];
-
-    protected $appends = ['url'];
-
-    protected $hidden = ['image_url'];
-
-    public function url(): Attribute
-    {
-        return Attribute::get(fn () => $this->image_url ? Storage::disk('public')->url($this->image_url) : null);
-    }
+    protected $fillable = ['season', 'image'];
 }

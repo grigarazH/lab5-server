@@ -12,9 +12,9 @@
         <option value="fall">Осень</option>
     </select>
     <br>
-    <label for="image">Фото</label>
+    <label for="image_file">Фото</label>
     <br>
-    <input type="file" id="image" name="image"></textarea>
+    <input type="file" id="image_file" name="image_file"></textarea>
     <br>
     <button type="submit">Отправить</button>
 </form>

@@ -55,8 +55,9 @@ class SeasonController extends Controller
 
     public function store_images(Request $request)
     {
-        $data = $request->only(['season', 'image']);
-        $data['image_url'] = Storage::disk('public')->putFile('', new File($data['image']));
+        $data = $request->only(['season']);
+        $path = $request->file('image_file')->getRealPath();
+        $data['image'] = base64_encode(file_get_contents($path));
         SeasonImage::create($data);
     }
 }

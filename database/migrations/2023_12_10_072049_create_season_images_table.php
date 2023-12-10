@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('season');
-            $table->string('image_url');
+            $table->binary('image');
         });
     }
 
