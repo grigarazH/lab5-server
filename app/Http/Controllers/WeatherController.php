@@ -16,7 +16,7 @@ class WeatherController extends Controller
 
     public function store(Request $request)
     {
-        $data = $request->only(['uuid', 'weather']);
+        $data = $request->only(['uuid', 'weather', 'city']);
         Weather::create($data);
     }
 }
