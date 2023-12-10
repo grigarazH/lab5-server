@@ -17,7 +17,7 @@ class SeasonImage extends Model
 
     protected $appends = ['image_data'];
 
-    public function image_data(): Attribute
+    public function imageData(): Attribute
     {
         return Attribute::get(fn () => base64_encode($this->image));
     }
