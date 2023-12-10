@@ -57,7 +57,6 @@ class SeasonController extends Controller
             ->header('Content-Description', 'File Transfer')
             ->header('Content-Type', $image->mime_type)
             ->header('Content-length', strlen($data))
-            ->header('Content-Disposition', 'attachment; filename='.$image->filename)
             ->header('Content-Transfer-Encoding', 'binary');
     }
 
