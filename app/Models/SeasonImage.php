@@ -12,4 +12,13 @@ class SeasonImage extends Model
     use HasFactory;
 
     protected $fillable = ['season', 'image'];
+
+    protected $hidden = ['image'];
+
+    protected $appends = ['image_data'];
+
+    public function image_data(): Attribute
+    {
+        return Attribute::get(fn () => base64_encode($this->image));
+    }
 }

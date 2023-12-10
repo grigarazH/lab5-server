@@ -15,11 +15,11 @@ class SeasonController extends Controller
      */
     public function descriptions(Request $request)
     {
-        $query = Season::query();
+        $query = Season::inRandomOrder();
         if ($season = $request->get('season')) {
             $query = $query->where('season', $season);
         }
-        return response()->json($query->get());
+        return response()->json($query->first());
     }
 
     /**
@@ -41,11 +41,11 @@ class SeasonController extends Controller
 
     public function images(Request $request)
     {
-        $query = SeasonImage::query();
+        $query = SeasonImage::inRandomOrder();
         if ($season = $request->get('season')) {
             $query = $query->where('season', $season);
         }
-        return response()->json($query->get(), options: JSON_UNESCAPED_SLASHES);
+        return response()->json($query->first(), options: JSON_UNESCAPED_SLASHES);
     }
 
     public function create_images()
