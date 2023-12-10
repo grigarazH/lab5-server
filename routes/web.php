@@ -27,6 +27,7 @@ Route::prefix('seasons')->name('seasons.')->group(function (Router $router) {
     Route::get('/images', [SeasonController::class, 'images'])->name('images');
     Route::get('/images/create', [SeasonController::class, 'create_images'])->name('create_images');
     Route::post('/images', [SeasonController::class, 'store_images'])->name('store_images');
+    Route::get('/images/{id}', [SeasonController::class, 'get_image'])->name('get_image');
 });
 
 Route::get('/weather', [WeatherController::class, 'index'])->name('weather.index');

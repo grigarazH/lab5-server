@@ -11,14 +11,14 @@ class SeasonImage extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['season', 'image'];
+    protected $fillable = ['season', 'image', 'mime_type', 'filename'];
 
-    protected $hidden = ['image'];
+    protected $hidden = ['image', 'mime_type', 'filename'];
 
-    protected $appends = ['image_data'];
+    protected $appends = ['image_url'];
 
-    public function imageData(): Attribute
+    public function imageUrl(): Attribute
     {
-        return Attribute::get(fn () => base64_encode($this->image));
+        return Attribute::get(fn () => route('seasons.get_image', ['id' => $this->id]));
     }
 }

@@ -15,7 +15,9 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('season');
-            $table->binary('image');
+            $table->text('image');
+            $table->string('mime_type');
+            $table->string('filename');
         });
     }
 
