@@ -13,7 +13,7 @@ class SeasonImage extends Model
 
     protected $fillable = ['season', 'image', 'mime_type', 'filename'];
 
-    protected $hidden = ['image', 'mime_type', 'filename'];
+    protected $hidden = ['mime_type', 'filename'];
 
     protected $appends = ['image_url'];
 
