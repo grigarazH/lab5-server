@@ -16,6 +16,7 @@ return new class extends Migration
             $table->timestamps();
             $table->string('uuid');
             $table->string('city');
+            $table->string('condition_image');
             $table->json('weather');
         });
     }
