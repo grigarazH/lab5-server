@@ -12,4 +12,4 @@ echo "Caching routs..."
 php artisan route:cache
 
 echo "Running migrations..."
-php artisan migrate:fresh --seed --force
+php artisan migrate --force
