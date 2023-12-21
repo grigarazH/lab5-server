@@ -9,7 +9,7 @@ class Weather extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['uuid', 'city', 'weather'];
+    protected $fillable = ['uuid', 'city', 'weather', 'condition_image'];
 
     protected $casts = [
         'weather' => 'array'
